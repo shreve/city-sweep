@@ -1,0 +1,70 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/google-map/google-map.html">
+<link rel="import" href="../control-panel/control-panel.html">
+
+<dom-module id="city-sweep-app">
+  <template>
+    <style>
+     :host {
+       display: block;
+       height: 100vh;
+       display: inline-flex;
+       flex-direction: row;
+       flex-wrap: nowrap;
+       width: 100%;
+     }
+
+     google-map,
+     control-panel {
+       height: 100vh;
+       display: block;
+       vertical-align: top;
+     }
+
+     control-panel {
+       width: 20rem;
+       order: 1;
+     }
+
+     google-map {
+      flex-grow: 1;
+      order: 2;
+     }
+
+     @media screen and (max-width: 1000px) {
+       :host {
+         flex-wrap: wrap;
+       }
+
+       control-panel {
+         width: 100%;
+         order: 2;
+         height: 40vh;
+       }
+
+       google-map {
+         width: 100%;
+         order: 1;
+         height: 60vh;
+       }
+     }
+    </style>
+
+    <control-panel></control-panel>
+    <google-map
+      fit-to-markers
+      disable-default-ui
+      api-key="AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo">
+    </google-map>
+
+  </template>
+
+  <script>
+   class CitySweepApp extends Polymer.Element {
+     static get is() { return 'city-sweep-app'; }
+     static get properties() { return {}; }
+   }
+
+   window.customElements.define(CitySweepApp.is, CitySweepApp);
+  </script>
+</dom-module>

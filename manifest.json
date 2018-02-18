@@ -1,0 +1,6 @@
+{
+  "name": "City Sweep",
+  "short_name": "city-sweep",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,60 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="control-panel">
+  <template>
+    <style>
+     :host {
+       background: #fbfbfb;
+       padding: 1em 0;
+       font-size: 18px;
+       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+     }
+
+     .form-control {
+       width: 100%;
+       padding: 0 1.5em;
+       margin-bottom: 1.5em;
+     }
+
+     input {
+       width: 100%;
+       font-size: 1em;
+       border: 1px solid #ddd;
+       border-radius: 0.25em;
+       padding: 0.5em 0.75em 0.4em;
+     }
+
+     input:focus {
+       border-color: #aaa;
+     }
+    </style>
+
+    <aside class="control-panel">
+      <div class="form-control">
+        <form on-submit="performSearch">
+          <input name="query" value="{{query::input}}" placeholder="Where do you want to go?" />
+        </form>
+      </div>
+    </aside>
+  </template>
+
+  <script>
+    class ControlPanel extends Polymer.Element {
+      static get is() { return 'control-panel'; }
+      static get properties() {
+        return {
+          query: {
+            type: String
+          }
+        };
+      }
+
+      performSearch(event) {
+        event.preventDefault();
+        console.log("Searching");
+      }
+    }
+
+    window.customElements.define(ControlPanel.is, ControlPanel);
+  </script>
+</dom-module>
