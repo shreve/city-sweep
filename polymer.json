@@ -6,9 +6,6 @@
   },
   "builds": [{
     "name": "ES5",
-    "bundle": true,
-    "js": {"minify": true, "compile": true},
-    "css": {"minify": true},
-    "html": {"minify": true}
+    "preset": "es5-bundled"
   }]
 }

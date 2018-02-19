@@ -11,7 +11,6 @@
   "builds": [
     {
       "name": "ES5",
-      "bundle": true,
       "js": {
         "minify": true,
         "compile": true
@@ -21,7 +20,11 @@
       },
       "html": {
         "minify": true
-      }
+      },
+      "bundle": true,
+      "addServiceWorker": true,
+      "addPushManifest": false,
+      "preset": "es5-bundled"
     }
   ],
   "lint": {
