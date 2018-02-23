@@ -4,6 +4,9 @@
       "polymer-2"
     ]
   },
+  "extraDependencies": [
+    "manifest.json"
+  ],
   "builds": [{
     "name": "ES5",
     "preset": "es5-bundled"
